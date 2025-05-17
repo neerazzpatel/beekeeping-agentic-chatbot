@@ -7,9 +7,11 @@ anthropic==0.51.0
 anyio==4.9.0
 asttokens==3.0.0
 attrs==25.3.0
+black==25.1.0
 cachetools==5.5.2
 certifi==2025.4.26
 charset-normalizer==3.4.2
+click==8.2.0
 colorama==0.4.6
 comm==0.2.2
 dataclasses-json==0.6.7
@@ -18,6 +20,7 @@ decorator==5.2.1
 distro==1.9.0
 executing==2.2.0
 filetype==1.2.0
+flake8==7.2.0
 frozenlist==1.6.0
 google-ai-generativelanguage==0.6.18
 google-api-core==2.24.2
@@ -32,6 +35,7 @@ httpcore==1.0.9
 httpx==0.28.1
 httpx-sse==0.4.0
 idna==3.10
+iniconfig==2.1.0
 ipykernel==6.29.5
 ipython==9.2.0
 ipython_pygments_lexers==1.1.1
@@ -56,6 +60,7 @@ langgraph-sdk==0.1.69
 langsmith==0.3.42
 marshmallow==3.26.1
 matplotlib-inline==0.1.7
+mccabe==0.7.0
 multidict==6.4.3
 mypy_extensions==1.1.0
 nest-asyncio==1.6.0
@@ -64,7 +69,9 @@ orjson==3.10.18
 ormsgpack==1.9.1
 packaging==24.2
 parso==0.8.4
+pathspec==0.12.1
 platformdirs==4.3.8
+pluggy==1.6.0
 prompt_toolkit==3.0.51
 propcache==0.3.1
 proto-plus==1.26.1
@@ -73,10 +80,13 @@ psutil==7.0.0
 pure_eval==0.2.3
 pyasn1==0.6.1
 pyasn1_modules==0.4.2
+pycodestyle==2.13.0
 pydantic==2.11.4
 pydantic-settings==2.9.1
 pydantic_core==2.33.2
+pyflakes==3.3.2
 Pygments==2.19.1
+pytest==8.3.5
 python-dateutil==2.9.0.post0
 python-dotenv==1.1.0
 pywin32==310
