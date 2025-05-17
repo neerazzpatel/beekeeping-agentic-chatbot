@@ -1,7 +1,9 @@
 from agent import create_agent
 from langchain_core.messages import HumanMessage, AIMessage
 from suggest import suggest_questions
-
+from dotenv import load_dotenv
+load_dotenv()
+import os
 def main():
     chat_history = []
     agent, memory = create_agent()

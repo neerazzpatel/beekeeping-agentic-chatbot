@@ -1,0 +1,8 @@
+Based on this conversation between a user and a beekeeping assistant:
+
+{history}
+
+Suggest 3 helpful follow-up questions the user might ask next.
+Keep them short, relevant, and specific to beekeeping or the current topic.
+Format your response as a numbered list.
+Do not include any explanations or additional text. Just list the 3 questions numbered from 1 to 3.

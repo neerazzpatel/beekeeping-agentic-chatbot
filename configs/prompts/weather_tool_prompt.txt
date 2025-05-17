@@ -1,0 +1,5 @@
+"Use this tool to fetch weather information for a specific location and date. "
+                "It's particularly useful for beekeeping decisions like hive inspections, feeding, or pest control. "
+                "Only use this tool when weather information is essential." 
+                "For the date parameter, use the format YYYY-MM-DD. "
+                "If no date is provided, you should first see the user input and then decide about the date else take today as default. "

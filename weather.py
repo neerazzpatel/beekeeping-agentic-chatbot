@@ -2,9 +2,17 @@
 
 import requests
 from datetime import datetime
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+api_key = os.getenv("WEATHER_API_KEY")
+
+if not api_key:
+    raise ValueError("WEATHER_API_KEY not set. Please set it as an environment variable.")
 
 def get_weather_info(location: str, date: str = None) -> str:
-    api_key = "a7c421db06954d99a4c132931251605"
+    
     if date:
         try:
             query_date = datetime.strptime(date, "%Y-%m-%d").date()

@@ -2,23 +2,34 @@
 
 from langchain_core.messages import BaseMessage
 from langchain.chat_models import init_chat_model
+import os
+import json
+
+# Load model config
+with open(r"D:\Humble bee assignment\configs\suggest_llm_model_configs.json") as f:
+    model_config = json.load(f)
+
+def load_prompt_template():
+    prompt_path = os.path.join("configs", "prompts", "suggest_llm_prompt.txt")
+    with open(prompt_path, "r", encoding="utf-8") as f:
+        return f.read()
 
 # Initialize the LLM 
-llm = init_chat_model("llama3-8b-8192", model_provider="groq")
-
+llm = init_chat_model(
+    model_config["model_name"],
+    model_provider=model_config["provider"],
+    temperature=model_config.get("temperature", 0.7),
+)
 def suggest_questions(history: list[BaseMessage]) -> list[str]:
     """
     Generates 3 follow-up question suggestions based on the recent conversation history.
     """
     last_turns = "\n".join([f"{msg.type.capitalize()}: {msg.content}" for msg in history[-6:]])  # last 3 exchanges
-    prompt = (
-        f"Based on this conversation between a user and a beekeeping assistant:\n\n"
-        f"{last_turns}\n\n"
-        f"Suggest 3 helpful follow-up questions the user might ask next. "
-        f"Keep them short, relevant, and specific to beekeeping or the current topic. "
-        f"Format your response as a numbered list."
-        f" Do not include any explanations or additional text. Just list the 3 questions numbered from 1 to 3.\n\n"
-    )
+    
+    # Load and format prompt
+    prompt_template = load_prompt_template()
+    prompt = prompt_template.format(history=last_turns)
+
     response = llm.invoke(prompt).content
     suggestions = []
     for line in response.strip().split("\n"):
