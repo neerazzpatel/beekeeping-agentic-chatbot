@@ -6,11 +6,12 @@ import os
 import json
 
 # Load model config
-with open(r"D:\Humble bee assignment\configs\suggest_llm_model_configs.json") as f:
+with open(r"..\configs\suggest_llm_model_configs.json") as f:
     model_config = json.load(f)
 
 def load_prompt_template():
-    prompt_path = os.path.join("configs", "prompts", "suggest_llm_prompt.txt")
+    # base_dir = os.path.dirname(__file__)
+    prompt_path = os.path.join("..", "configs", "prompts", "suggest_llm_prompt.txt")
     with open(prompt_path, "r", encoding="utf-8") as f:
         return f.read()
 
